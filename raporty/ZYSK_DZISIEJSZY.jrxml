@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ZYSK_DZISIEJSZY" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b8724c3e-1b64-4581-8c97-2104e6a63cf3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT CURRENT_DATE AS "DATA", SUM(CENA_ZAKUPU) AS "ZYSK DZISIEJSZY", SUM(LICZBA) AS "ILOSC SPRZEDANYCH DAŃ"
+FROM ZAMOWIENIE,DETALE_ZAMOWIENIA
+WHERE ZAMOWIENIE.ID_ZAMOWIENIA = DETALE_ZAMOWIENIA.ID_ZAMOWIENIA
+AND TRUNC(DATA_ZAMOWIENIA) = TRUNC(CURRENT_DATE)]]>
+	</queryString>
+	<field name="DATA" class="java.sql.Timestamp"/>
+	<field name="ZYSK DZISIEJSZY" class="java.math.BigDecimal"/>
+	<field name="ILOSC SPRZEDANYCH DAŃ" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="105" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="395" y="0" width="160" height="20" uuid="00ff8793-5309-432d-bfe6-a52f5c304bb7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="199" y="0" width="162" height="93" uuid="8833bc45-9bb5-48d5-b5eb-db4cff1fb4f3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="24"/>
+				</textElement>
+				<text><![CDATA[ZYSK DZISIEJSZY OGÓLNY]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="99" y="0" width="100" height="20" uuid="cdbf852d-d673-4b13-b4da-e1f648ea462e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[ZYSK DZISIEJSZY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="361" y="0" width="120" height="40" uuid="df4e7164-d64c-4c82-b1e3-78c45bfe959b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[ILOŚĆ SPRZEDANYCH DAŃ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" backcolor="#00B482" uuid="3d3ab767-143f-4faf-9e7d-68f3e643b21f"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="0" width="100" height="20" uuid="c82e8f47-43da-4eb3-954b-616f078c7bd0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ZYSK DZISIEJSZY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="361" y="0" width="120" height="20" uuid="4a91ab45-cba8-4be8-b499-cbb6d70bc73d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ILOSC SPRZEDANYCH DAŃ}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ZYSK_DZISIEJSZY_SZCZEGOLY" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ee665a67-84c1-4114-be0e-e5a5191248d1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT DISTINCT CURRENT_DATE AS "DATA", DETALE_ZAMOWIENIA.ID_DANIA AS "NUMER DANIA", NAZWA_DANIA AS "NAZWA DANIA", SUM(CENA_ZAKUPU) AS "SUMA ZYSKU", SUM(LICZBA) AS "ILOSC SPRZEDANYCH DAN"
+FROM ZAMOWIENIE, DETALE_ZAMOWIENIA, DANIE
+WHERE DETALE_ZAMOWIENIA.ID_ZAMOWIENIA = ZAMOWIENIE.ID_ZAMOWIENIA
+AND DETALE_ZAMOWIENIA.ID_DANIA = DANIE.ID_DANIA
+AND TRUNC(DATA_ZAMOWIENIA) = TRUNC(CURRENT_DATE)
+GROUP BY DETALE_ZAMOWIENIA.ID_DANIA, NAZWA_DANIA
+ORDER BY DETALE_ZAMOWIENIA.ID_DANIA ASC]]>
+	</queryString>
+	<field name="DATA" class="java.sql.Timestamp"/>
+	<field name="NUMER DANIA" class="java.math.BigDecimal"/>
+	<field name="NAZWA DANIA" class="java.lang.String"/>
+	<field name="SUMA ZYSKU" class="java.math.BigDecimal"/>
+	<field name="ILOSC SPRZEDANYCH DAN" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="113" splitType="Stretch">
+			<staticText>
+				<reportElement x="169" y="0" width="227" height="75" uuid="69c37537-d35e-4eb9-8fdb-f5388b58498e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="24"/>
+				</textElement>
+				<text><![CDATA[ZYSK SZCZEGÓŁOWY]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="196" y="75" width="159" height="20" uuid="21f27a6b-3589-423b-b07f-f82ad3ebe353"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="22" width="100" height="20" uuid="7c6b868b-8581-4f09-8a1a-c86f06059fc5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[NUMER DANIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="22" width="127" height="20" uuid="51534b3f-6fcd-411c-acc4-1a8f083dde94"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[NAZWA DANIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="306" y="22" width="100" height="20" uuid="97e84f6f-5552-42a5-b81d-a0ab50037b02"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[SUMA ZYSKU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="19" width="100" height="42" uuid="d4f29735-a320-4131-95e2-6e98fb62a879"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[ILOŚĆ SPRZEDANYCH DAŃ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" backcolor="#00B482" uuid="0111e315-d6aa-47d5-8e8d-26dd677fb301"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="96e4e780-2d9c-4eb2-a89c-cbce5e5ca3b1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NUMER DANIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="0" width="127" height="20" uuid="ccf89d9a-fb33-4add-b3cd-0edb7013caab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAZWA DANIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="0" width="100" height="20" uuid="3ba21ba8-0cf0-4182-a35b-ca7dae30cd44"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SUMA ZYSKU}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="ae3a670e-312d-45a1-b7b9-c75346221798"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ILOSC SPRZEDANYCH DAN}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

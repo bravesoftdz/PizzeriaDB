@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ZYSK_STYCZEN" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="71d50819-89bc-4ace-a424-c00d137c69f7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT SUM(CENA_ZAKUPU) AS "ZYSK W STYCZNIU", SUM(LICZBA) AS "ILOSC SPRZEDANYCH DAŃ"
+FROM ZAMOWIENIE,DETALE_ZAMOWIENIA
+WHERE ZAMOWIENIE.ID_ZAMOWIENIA = DETALE_ZAMOWIENIA.ID_ZAMOWIENIA
+AND EXTRACT(MONTH FROM DATA_ZAMOWIENIA) = 1]]>
+	</queryString>
+	<field name="ZYSK W STYCZNIU" class="java.math.BigDecimal"/>
+	<field name="ILOSC SPRZEDANYCH DAŃ" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="386" y="0" width="169" height="20" uuid="56bab4c3-cbee-4cb1-892d-be8fb5d1fac4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="218" y="0" width="125" height="79" uuid="4194dd56-6434-4020-9494-310fa27842d7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="24"/>
+				</textElement>
+				<text><![CDATA[ZYSK OGÓLNY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="72" width="125" height="20" uuid="d04bd236-7d2e-4af1-82c5-7a8c1e465418"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[STYCZEŃ 2017]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="28" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="343" y="0" width="139" height="28" uuid="dd15ece7-763c-4f8d-8246-6ac744c2c5c0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[ILOŚĆ SPRZEDANYCH DAŃ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="2" width="110" height="20" uuid="b33afd18-dc74-47c0-b0f2-800b94591d93"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[ZYSK W STYCZNIU]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" backcolor="#00B464" uuid="0c2c06d6-0a98-4b2b-92d7-d66c4f5fd608"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="343" y="0" width="139" height="20" uuid="d7bbee71-a41d-4624-889a-c53ba349d0f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ILOSC SPRZEDANYCH DAŃ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="0" width="110" height="20" uuid="e4af6333-76a6-48ed-ac81-46d10aeb6db6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ZYSK W STYCZNIU}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

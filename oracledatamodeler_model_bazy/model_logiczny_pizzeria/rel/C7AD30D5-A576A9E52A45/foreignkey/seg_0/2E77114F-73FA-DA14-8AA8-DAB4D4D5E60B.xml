@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2E77114F-73FA-DA14-8AA8-DAB4D4D5E60B" containerWithKeyObject="623FB87A-10FB-A091-D7C6-AB34CF894F4C" localFKIndex="81E3C0DA-3987-1615-0D3D-C55FB9CDFBF4" name="DANIE_FK">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:02 UTC</createdTime>
+<generatorID>15ACE4ED-3189-64F6-AAC2-BE556D503274</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<referredTableLongName>DANIE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>136D3FBC-5376-C635-18B1-399E8866A80D</referredTableID>
+<keyObject>EA684006-2516-FD0C-DA8E-94B3EF5C5E7F</keyObject>
+<referredKeyID>EA684006-2516-FD0C-DA8E-94B3EF5C5E7F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_DANIA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

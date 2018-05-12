@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="136D3FBC-5376-C635-18B1-399E8866A80D" name="DANIE">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:01 UTC</createdTime>
+<generatorID>C35EB5E9-7FBC-25B0-1CFF-8623B023522B</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_DANIA" id="CD65E4A6-167C-05B9-B675-3B903C94ED8C">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:01 UTC</createdTime>
+<generatorID>1F089F87-53C9-A0B2-CE7C-D97AF5D74637</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAZWA_DANIA" id="A7BBC85E-7A71-02E1-DA14-530111327326">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:01 UTC</createdTime>
+<generatorID>3A7AE813-C9FC-7784-6BF0-CB2D451F5D6E</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CENA_DANIA" id="C6E0522C-C0FC-4BCB-1B37-5DA87A8B9564">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:01 UTC</createdTime>
+<generatorID>890AB2B9-227D-F63B-25E7-D0287A849B7E</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EA684006-2516-FD0C-DA8E-94B3EF5C5E7F" name="DANIE_PK">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:01 UTC</createdTime>
+<generatorID>906D69B2-D832-9ACF-BAE1-07F889A94D74</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CD65E4A6-167C-05B9-B675-3B903C94ED8C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

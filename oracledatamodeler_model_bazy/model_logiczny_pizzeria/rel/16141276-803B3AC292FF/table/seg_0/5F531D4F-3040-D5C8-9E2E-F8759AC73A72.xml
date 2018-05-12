@@ -1,0 +1,156 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5F531D4F-3040-D5C8-9E2E-F8759AC73A72" name="DETALE_ZAMOWIENIA">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>FF4BCA1E-F688-640B-6FB9-E7C5449F4538</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_ZAMOWIENIA" id="A65A0C57-27E3-DEA6-5BA5-FAE6B03CA6EC">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>76C507AB-C749-9FA2-8C1B-9C45ED08E001</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D1E83B1C-02C3-F23D-21C0-FC05CE00AEE7" referredColumn="7C289C66-9B36-8C58-0180-A4DAD89A1E2F"/>
+</associations>
+</Column>
+<Column name="POZYCJA" id="8A970649-F7DF-1E33-9946-E39215DDB54E">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>4EFFF80E-6AC4-F1D8-38BB-FFE1201B9D22</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_DANIA" id="8676D9AC-FF7F-306E-C1EA-DFCE81A192B0">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>59116EA7-3F9C-9182-683C-77DE1D8C9425</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D819F771-6CFA-A3E3-A673-A35459152700" referredColumn="FDD2D6D0-0FE6-12F4-94DD-2DBE3EA35C15"/>
+</associations>
+</Column>
+<Column name="ID_PRACOWNIKA" id="8AC42499-7D8B-7E3C-A9FA-D46929AAB901">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>7A7F3870-E425-E3BD-137B-DC39DCF4F218</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D201341F-3B6D-4021-F43E-5211DB4B93F8" referredColumn="61106AC2-7FE0-4963-A6BB-60FCEBDE39DA"/>
+</associations>
+</Column>
+<Column name="LICZBA" id="6865D8DA-CDB2-24E0-3918-34F36E7592D9">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>C3AC198B-3015-34F6-8C05-D90F82A36545</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CENA_ZAKUPU" id="32344CE0-7466-D88C-B083-ECD027FA168F">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>643BC9F9-5A8C-A3D4-8614-9AEA481ED514</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="48DDF7DA-1AD0-5D94-AF4F-A63B8C858079" name="DETALE_ZAMOWIENIA_PK">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>DE818C94-1AEA-1AA2-F706-33EE4B9C925F</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8A970649-F7DF-1E33-9946-E39215DDB54E"/>
+<colUsage columnID="A65A0C57-27E3-DEA6-5BA5-FAE6B03CA6EC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8D53D5E0-F40C-5307-18F3-A59FFFE95DE2" name="DETALE_ZAMOWIENIA__IDX">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>15ACE4ED-3189-64F6-AAC2-BE556D503274</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="8676D9AC-FF7F-306E-C1EA-DFCE81A192B0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="39357687-43CF-BD96-C150-8B022454622E" name="DANIE_FK">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>15ACE4ED-3189-64F6-AAC2-BE556D503274</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8676D9AC-FF7F-306E-C1EA-DFCE81A192B0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2581A346-1C4A-EA45-013D-FBED00432358" name="ZAMOWIENIE_FK">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>CCFD7294-496F-0C84-8762-B5F8D14AD49B</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A65A0C57-27E3-DEA6-5BA5-FAE6B03CA6EC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3F054ABC-88E0-595A-A190-A0352BBF9AC3" name="PRACOWNIK_FKv2">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>4164CB59-EC26-FCEE-950D-7E6FA646E070</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8AC42499-7D8B-7E3C-A9FA-D46929AAB901"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

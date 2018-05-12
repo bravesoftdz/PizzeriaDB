@@ -1,0 +1,120 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FF4BCA1E-F688-640B-6FB9-E7C5449F4538" name="DETALE ZAMOWIENIA">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-03 20:42:32 UTC</createdTime>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<engineerTo>
+<item key="C7AD30D5-6989-5934-8F65-A576A9E52A45" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID ZAMOWIENIA" id="76C507AB-C749-9FA2-8C1B-9C45ED08E001">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:27:22 UTC</createdTime>
+<generatorID>CCFD7294-496F-0C84-8762-B5F8D14AD49B</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<engineerTo>
+<item key="C7AD30D5-6989-5934-8F65-A576A9E52A45" value="true"/>
+</engineerTo>
+<referedAttribute>2A06167E-3EC6-7309-18B6-5BC60811FBDA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="POZYCJA" id="4EFFF80E-6AC4-F1D8-38BB-FFE1201B9D22">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-03 20:59:50 UTC</createdTime>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<engineerTo>
+<item key="C7AD30D5-6989-5934-8F65-A576A9E52A45" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID DANIA" id="59116EA7-3F9C-9182-683C-77DE1D8C9425">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:23:41 UTC</createdTime>
+<generatorID>15ACE4ED-3189-64F6-AAC2-BE556D503274</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<engineerTo>
+<item key="C7AD30D5-6989-5934-8F65-A576A9E52A45" value="true"/>
+</engineerTo>
+<referedAttribute>1F089F87-53C9-A0B2-CE7C-D97AF5D74637</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID PRACOWNIKA" id="3DD3C9AA-FB05-2FE3-079D-479044966826">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:04:57 UTC</createdTime>
+<generatorID>49D7548A-7E53-0113-4D92-C4314DAD788C</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<engineerTo>
+<item key="C7AD30D5-6989-5934-8F65-A576A9E52A45" value="true"/>
+</engineerTo>
+<referedAttribute>9413F01C-0E1E-F083-C7F5-F65AEF7E072D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="LICZBA" id="C3AC198B-3015-34F6-8C05-D90F82A36545">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-03 21:00:44 UTC</createdTime>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<engineerTo>
+<item key="C7AD30D5-6989-5934-8F65-A576A9E52A45" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CENA ZAKUPU" id="643BC9F9-5A8C-A3D4-8614-9AEA481ED514">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-03 21:01:11 UTC</createdTime>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<engineerTo>
+<item key="C7AD30D5-6989-5934-8F65-A576A9E52A45" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DE818C94-1AEA-1AA2-F706-33EE4B9C925F" name="DETALE_ZAMOWIENIA_PK">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-03 20:59:35 UTC</createdTime>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="C7AD30D5-6989-5934-8F65-A576A9E52A45" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4EFFF80E-6AC4-F1D8-38BB-FFE1201B9D22</attributeRef>
+<attributeRef>76C507AB-C749-9FA2-8C1B-9C45ED08E001</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

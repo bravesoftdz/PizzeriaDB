@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F6D740E7-6490-2005-B7B3-AD043C1F30E7" name="TYP_PRACOWNIKA">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>EAC6BF52-6FBA-9C5C-A6E7-F7ECAC59F78B</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_PRACOWNIKA" id="529E6C2E-CEB3-DF81-9FDC-0798CFA17041">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>D8323894-9B84-0FEA-B686-7FCCA454659E</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A2AF0143-A81E-9421-77FF-633864F40BCC" referredColumn="61106AC2-7FE0-4963-A6BB-60FCEBDE39DA"/>
+</associations>
+</Column>
+<Column name="STANOWISKO" id="A8069003-3BEA-4B20-D1FA-BE8A5929BAE3">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>CC4D8ECC-0448-9ACD-EB50-F288F7AD3FE8</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EACFE83A-BCE3-1CDD-7A2B-97308B69A23E" name="TYP_PRACOWNIKA_PK">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>A56B30BA-34A3-E114-8447-4D5A37026283</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="529E6C2E-CEB3-DF81-9FDC-0798CFA17041"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A722D146-FD5C-64E1-89A8-5B75329EF1C3" name="PRACOWNIK_FK">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>7513498D-01B9-3253-57DC-208323B1BC2C</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="529E6C2E-CEB3-DF81-9FDC-0798CFA17041"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PRZYKLADOWA_FAKTURA" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13fa44b2-dcdc-4d93-91d9-151de66687c2">
+	<property name="ireport.zoom" value="1.2100000000000035"/>
+	<property name="ireport.x" value="149"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#595050">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#FFE6E6">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["F:\\BAZY DANYCH\\PROJEKT_MOJ\\raporty\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="id_zamowienia" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+(SELECT NAZWA_KLIENTA FROM KLIENT,ZAMOWIENIE WHERE ID_ZAMOWIENIA = $P{id_zamowienia} AND KLIENT.ID_KLIENTA = ZAMOWIENIE.ID_KLIENTA),
+(SELECT ADRES_KLIENTA FROM KLIENT,ZAMOWIENIE WHERE ID_ZAMOWIENIA = $P{id_zamowienia} AND KLIENT.ID_KLIENTA = ZAMOWIENIE.ID_KLIENTA),
+(SELECT DATA_ZAMOWIENIA FROM ZAMOWIENIE WHERE ID_ZAMOWIENIA = $P{id_zamowienia}), DETALE_ZAMOWIENIA."POZYCJA",DANIE."NAZWA_DANIA",DETALE_ZAMOWIENIA."CENA_ZAKUPU",DETALE_ZAMOWIENIA."LICZBA"
+FROM
+     "DETALE_ZAMOWIENIA" DETALE_ZAMOWIENIA INNER JOIN "DANIE" DANIE ON DETALE_ZAMOWIENIA."ID_DANIA" = DANIE."ID_DANIA"
+WHERE
+     ID_ZAMOWIENIA = $P{id_zamowienia}
+ORDER BY
+     POZYCJA ASC]]>
+	</queryString>
+	<field name="(SELECTNAZWA_KLIENTAFROMKLIENT,ZAMOWIENIEWHEREID_ZAMOWIENIA=:1ANDKLIENT.ID_KLIENTA=ZAMOWIENIE.ID_KLIENTA)" class="java.lang.String"/>
+	<field name="(SELECTADRES_KLIENTAFROMKLIENT,ZAMOWIENIEWHEREID_ZAMOWIENIA=:2ANDKLIENT.ID_KLIENTA=ZAMOWIENIE.ID_KLIENTA)" class="java.lang.String"/>
+	<field name="(SELECTDATA_ZAMOWIENIAFROMZAMOWIENIEWHEREID_ZAMOWIENIA=:3)" class="java.sql.Timestamp"/>
+	<field name="POZYCJA" class="java.math.BigDecimal"/>
+	<field name="NAZWA_DANIA" class="java.lang.String"/>
+	<field name="CENA_ZAKUPU" class="java.math.BigDecimal"/>
+	<field name="LICZBA" class="java.math.BigDecimal"/>
+	<variable name="SUMA" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[(Math.round($F{CENA_ZAKUPU}*100.0))/100.0]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="netto" class="java.lang.Double">
+		<variableExpression><![CDATA[(Math.round($F{CENA_ZAKUPU}*0.78*100.0))/100.0]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="144" splitType="Stretch">
+			<ellipse>
+				<reportElement mode="Opaque" x="2" y="4" width="165" height="138" backcolor="#C86400" uuid="80af999a-0fde-49db-b869-b9d488d773b2"/>
+			</ellipse>
+			<staticText>
+				<reportElement mode="Opaque" x="508" y="81" width="294" height="63" backcolor="#FFCD88" uuid="5bc6f0aa-1321-45e2-b6a9-0bc3d43fbc4f"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="316" y="0" width="148" height="36" uuid="045e5785-e304-46c0-849e-be52882b7be8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="24"/>
+				</textElement>
+				<text><![CDATA[FAKTURA]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy HH:MM">
+				<reportElement x="598" y="5" width="204" height="20" uuid="07b28adb-5d4c-41a4-ad45-3de61a5e3ab6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="499" y="5" width="100" height="20" uuid="a533a2c4-3e2a-4ccc-abb1-953f2f0ec566"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Data wystawienia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="42" width="127" height="60" uuid="8ba8e0e6-31d6-4c9e-938d-9afa4b419a58"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[FIRMA SPRZEDAJĄCA: Pizzeria Italiano ul. Południowa 130 08-110 Siedlce]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="514" y="82" width="288" height="20" uuid="a2fa8937-2dbf-4e5b-9602-89934005b8e8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{(SELECTNAZWA_KLIENTAFROMKLIENT,ZAMOWIENIEWHEREID_ZAMOWIENIA=:1ANDKLIENT.ID_KLIENTA=ZAMOWIENIE.ID_KLIENTA)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="514" y="104" width="288" height="20" uuid="9e457d56-f453-472c-8a88-0b29b4c1be98"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{(SELECTADRES_KLIENTAFROMKLIENT,ZAMOWIENIEWHEREID_ZAMOWIENIA=:2ANDKLIENT.ID_KLIENTA=ZAMOWIENIE.ID_KLIENTA)}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="508" y="62" width="148" height="20" uuid="fc494cc7-8459-45f8-8b3e-26eca81aecb7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="12"/>
+				</textElement>
+				<text><![CDATA[DANE KUPUJĄCEGO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="365" y="39" width="27" height="20" uuid="3c549e7f-4bcd-44eb-ae67-5db6be24825b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{id_zamowienia}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy HH:MM">
+				<reportElement x="598" y="29" width="204" height="20" uuid="7000d835-3ca1-4a06-aa9e-c4ed6e2afa86"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{(SELECTDATA_ZAMOWIENIAFROMZAMOWIENIEWHEREID_ZAMOWIENIA=:3)}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="499" y="20" width="100" height="36" uuid="6f5a817b-ba0b-4775-bdd9-42e19a3b309b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Data złożenia zamówienia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="246" y="73" width="227" height="20" uuid="6ab4e9f3-7e73-4e5d-afed-43be0bd5e813"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="12"/>
+				</textElement>
+				<text><![CDATA[DLA NUMERU ZAMÓWIENIA:]]></text>
+			</staticText>
+			<textField pattern="yyyy">
+				<reportElement x="398" y="39" width="100" height="20" uuid="55e2dd2a-8012-407a-86b4-f97ba1eb8dae"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="392" y="39" width="5" height="20" uuid="a43e52a0-3821-4fd0-bbcb-22ae02340a9f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="14"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="478" y="73" width="30" height="20" uuid="5f13c52f-7c0e-41bf-88e3-0b342b37c781"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{id_zamowienia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="264" y="39" width="100" height="20" uuid="ceb83862-632c-44fd-b3de-5d1c77f90448"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="12"/>
+				</textElement>
+				<text><![CDATA[nr]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="508" y="81" width="294" height="63" uuid="54062129-f83d-42ee-b69e-33f7220fbc82"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="10" width="802" height="51" backcolor="#E6E6E6" uuid="0d29909f-2689-4281-940b-b9186e4266c4"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="31" width="100" height="20" uuid="31ff610a-281f-478e-be6e-4c4f4ab73687"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[POZYCJA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="246" y="31" width="127" height="20" uuid="5481812e-790e-4164-b981-704bd87bfc67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[NAZWA DANIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="458" y="20" width="100" height="31" uuid="3d00230e-8262-4246-8d96-bac4cf50e73f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[CENA ZAKUPU BRUTTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="373" y="31" width="85" height="20" uuid="1f3bc25d-c9ce-4485-a2bf-fd4a3daca15c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[LICZBA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="558" y="20" width="100" height="31" uuid="36685ff6-8fd3-4c11-9cb1-badb821163e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[CENA ZAKUPU NETTO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="9" width="800" height="1" uuid="ab08c0bd-83c0-4704-b155-1e22aa3480f1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="60" width="800" height="1" uuid="e6099866-15d1-4dfd-884b-d06f4341a4f3"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="119" y="0" width="557" height="20" backcolor="#C8C8C8" uuid="52332c44-dae6-4671-9581-22b677be42a1"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="0" width="100" height="20" uuid="977a8ddc-6391-49a5-aaa5-2bd54421bb18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{POZYCJA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="246" y="0" width="127" height="20" uuid="18befd49-bb7e-47a1-9e4f-81dd2647005d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAZWA_DANIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="458" y="0" width="60" height="20" uuid="40ce365d-bb0a-410d-a884-69efa40d00e6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CENA_ZAKUPU}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="518" y="0" width="40" height="20" uuid="920600de-67ef-410c-82f3-53324e893e27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[PLN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="373" y="0" width="85" height="20" uuid="646869f5-e6b0-4984-bbf1-1fe085051f53"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LICZBA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="618" y="0" width="40" height="20" uuid="59bc2b61-d678-4f33-8d1c-1cb433b1136c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[PLN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="558" y="0" width="60" height="20" uuid="5a16a282-cfd7-4504-9fbd-6401773dcaca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{netto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="628" y="0" width="174" height="40" uuid="17c0cf40-85c6-4ef2-9bf6-300cc0c67be2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Pizzeria Italiano ul. Południowa 130 08-110 Siedlce]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="800" height="1" uuid="00603e09-27bd-4a1c-9a66-d995fbd05ee9"/>
+			</line>
+			<staticText>
+				<reportElement x="331" y="23" width="308" height="20" uuid="db60f276-e0da-443f-bb5a-111148f89241"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[PODPIS WYSTAWIAJĄCEGO: .........................................]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="56" splitType="Stretch">
+			<frame>
+				<reportElement style="table 2" mode="Transparent" x="478" y="28" width="150" height="28" uuid="f39e81a7-9775-4bb7-9b09-8e36eb1c3d4d"/>
+				<staticText>
+					<reportElement x="110" y="0" width="40" height="28" uuid="b0e7e798-d949-4e91-bcf5-d85aca6fdf34"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Serif"/>
+					</textElement>
+					<text><![CDATA[PLN]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="60" y="0" width="50" height="28" uuid="4252999b-c9c6-4705-8ebe-03e6fd7c493b"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="DejaVu Serif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[(Math.round($V{SUMA}*100.0))/100.0]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="50" height="28" uuid="c50b2fa0-908a-45f7-892c-3a3d24938d71"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="DejaVu Serif"/>
+					</textElement>
+					<text><![CDATA[RAZEM BRUTTO:]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="KUCHARZE_DANIA" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="65acd622-0cf2-402f-aecc-1f2ea6bd7811">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT NAZWA_PRACOWNIKA AS "IMIE I NAZWISKO KUCHARZA", ID_ZAMOWIENIA AS "NUMER ZAMOWIENIA", POZYCJA AS "POZYCJA ZAMOWIENIA", NAZWA_DANIA AS "NAZWA DANIA" FROM PRACOWNIK,DETALE_ZAMOWIENIA, DANIE
+WHERE DETALE_ZAMOWIENIA.ID_PRACOWNIKA = PRACOWNIK.ID_PRACOWNIKA AND DETALE_ZAMOWIENIA.ID_DANIA = DANIE.ID_DANIA
+ORDER BY ID_ZAMOWIENIA ASC]]>
+	</queryString>
+	<field name="IMIE I NAZWISKO KUCHARZA" class="java.lang.String"/>
+	<field name="NUMER ZAMOWIENIA" class="java.math.BigDecimal"/>
+	<field name="POZYCJA ZAMOWIENIA" class="java.math.BigDecimal"/>
+	<field name="NAZWA DANIA" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="103" y="19" width="370" height="60" uuid="2892a0b3-0efa-45a4-b172-4b8914abfd3d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="14"/>
+				</textElement>
+				<text><![CDATA[SPIS DAŃ I ZAMÓWIEŃ PRZYGOTOWANYCH PRZEZ DANEGO KUCHARZA]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="403" y="-1" width="152" height="20" uuid="93c667f9-8182-43e1-aee2-b826cb8b6abb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="29" width="118" height="20" uuid="16d30242-6aa4-4f90-8141-4d2d0d24e82b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[IMIĘ I NAZWISKO KUCHARZA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="147" y="29" width="122" height="20" uuid="23803f68-ad9b-45d5-8203-25730d141f48"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[NUMER ZAMÓWIENIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="288" y="29" width="100" height="20" uuid="4e3ca3af-a980-451e-bf15-619eff240060"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[POZYCJA ZAMOWIENIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="426" y="29" width="129" height="20" uuid="5f253a8d-a049-446e-929a-ac4b5d62f32b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[NAZWA DANIA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="3" y="0" width="552" height="20" backcolor="#00B464" uuid="bd26f023-dbf3-41ab-a19a-a6f12aa969da"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="0" width="118" height="20" uuid="e7ba4f63-2353-4f46-a047-b0004e8f2260"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{IMIE I NAZWISKO KUCHARZA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="147" y="0" width="110" height="20" uuid="ea34d181-7ba8-45b2-bac8-17fe71cb6c3b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NUMER ZAMOWIENIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="0" width="100" height="20" uuid="17da298c-ceec-4939-b7bf-717ef39705a3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{POZYCJA ZAMOWIENIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="426" y="0" width="129" height="20" uuid="3161eac8-6e43-45c7-846c-39ec3d63b209"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAZWA DANIA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

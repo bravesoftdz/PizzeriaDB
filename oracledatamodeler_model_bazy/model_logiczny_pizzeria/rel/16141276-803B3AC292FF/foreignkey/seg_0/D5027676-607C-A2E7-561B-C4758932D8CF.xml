@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D5027676-607C-A2E7-561B-C4758932D8CF" containerWithKeyObject="FD60756F-0F11-580E-30B5-682686827AE1" localFKIndex="E6B300E3-E3A5-38E3-DEFB-C77BEA8F7BE5" name="LOKAL_FK">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>72399015-C11C-1A26-3F0C-A56455BC87A6</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<referredTableLongName>LOKAL</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>115491CA-676D-0AAB-A94D-932CD54328FA</referredTableID>
+<keyObject>79400F2E-7CE3-BCE5-26BD-AB3005605173</keyObject>
+<referredKeyID>79400F2E-7CE3-BCE5-26BD-AB3005605173</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_LOKALU</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

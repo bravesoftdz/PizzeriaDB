@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D4C95FCD-F315-C851-897E-2FED9E53749B" name="TYP_PRACOWNIKA">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:02 UTC</createdTime>
+<generatorID>EAC6BF52-6FBA-9C5C-A6E7-F7ECAC59F78B</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_STANOWISKA" id="56F1DB3D-EF89-F80F-5580-FCE5992D63CA">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:02 UTC</createdTime>
+<generatorID>BEE55D56-DE91-15F8-2ABC-EBB6009E3047</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAZWA_STANOWISKA" id="536A3A12-A440-E42E-C755-78B3747A2962">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:02 UTC</createdTime>
+<generatorID>CC4D8ECC-0448-9ACD-EB50-F288F7AD3FE8</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4334A6F1-F2C5-C8B9-1054-F92E62A89D04" name="TYP_PRACOWNIKA_PK">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:02 UTC</createdTime>
+<generatorID>A56B30BA-34A3-E114-8447-4D5A37026283</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="56F1DB3D-EF89-F80F-5580-FCE5992D63CA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

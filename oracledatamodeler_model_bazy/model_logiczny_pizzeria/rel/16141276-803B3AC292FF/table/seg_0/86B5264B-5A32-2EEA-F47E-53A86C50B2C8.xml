@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="86B5264B-5A32-2EEA-F47E-53A86C50B2C8" name="ZAMOWIENIE">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>F1A6CD54-442D-E9F7-1ED2-06E484623D92</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_ZAMOWIENIA" id="7C289C66-9B36-8C58-0180-A4DAD89A1E2F">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>2A06167E-3EC6-7309-18B6-5BC60811FBDA</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_KLIENTA" id="39F1054C-D435-0C16-FA85-61188F8CDEE2">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>2AC159FB-6E33-41D7-E661-B761388EC0E9</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F627D2DB-5DAE-366E-914C-90EDA1AD2841" referredColumn="CA3AB25D-A9AC-C0FB-6ED9-4D6762864182"/>
+</associations>
+</Column>
+<Column name="DATA_ZAMOWIENIA" id="8A13B388-5B02-983B-2DF0-C53966B8263D">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>400D88C3-473D-FD15-9E9F-E8A3808BEF07</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WARTOSC_ZAMOWIENIA" id="2F170A36-C6B1-8F62-8B2E-8E7B24D6126D">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>1728087D-2C40-AC00-7199-225E267803CF</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="563FB358-9928-2AB1-CC0A-450CF6B3318E" name="ZAMOWIENIE_PK">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>96FFA19E-17D3-4789-2AEB-F27E3F17115B</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7C289C66-9B36-8C58-0180-A4DAD89A1E2F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="692C0DCF-FE6A-C356-82FD-806500DA7C56" name="KLIENT_FK">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:42:31 UTC</createdTime>
+<generatorID>87058ED2-6CA8-B95E-91AE-BAB26A5B8814</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="39F1054C-D435-0C16-FA85-61188F8CDEE2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

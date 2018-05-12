@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ZAMOWIENIE FK" directorySegmentName="seg_0" id="CCFD7294-496F-0C84-8762-B5F8D14AD49B">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:27:22 UTC</createdTime>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<engineerTo>
+<item key="C7AD30D5-6989-5934-8F65-A576A9E52A45" value="true"/>
+</engineerTo>
+<sourcePk>96FFA19E-17D3-4789-2AEB-F27E3F17115B</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F1A6CD54-442D-E9F7-1ED2-06E484623D92</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>FF4BCA1E-F688-640B-6FB9-E7C5449F4538</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

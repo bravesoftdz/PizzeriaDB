@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0FD5E281-5F86-D4B6-0DDD-2112F5358295" containerWithKeyObject="968A0845-C3F6-89CD-E548-24C1A4F6D252" localFKIndex="669D4270-6E02-539A-FCE2-4606E19A72EC" name="TYP_PRACOWNIKA_FK">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:02 UTC</createdTime>
+<generatorID>DFED4A51-4EC2-D555-1ED0-55ED53F5FDF7</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<referredTableLongName>TYP_PRACOWNIKA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D4C95FCD-F315-C851-897E-2FED9E53749B</referredTableID>
+<keyObject>4334A6F1-F2C5-C8B9-1054-F92E62A89D04</keyObject>
+<referredKeyID>4334A6F1-F2C5-C8B9-1054-F92E62A89D04</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_STANOWISKA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

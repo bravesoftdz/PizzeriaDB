@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_12" directorySegmentName="seg_0" id="DFED4A51-4EC2-D555-1ED0-55ED53F5FDF7">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:05:54 UTC</createdTime>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<engineerTo>
+<item key="C7AD30D5-6989-5934-8F65-A576A9E52A45" value="true"/>
+</engineerTo>
+<sourcePk>A56B30BA-34A3-E114-8447-4D5A37026283</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>EAC6BF52-6FBA-9C5C-A6E7-F7ECAC59F78B</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>87694376-A660-8914-8D99-7EE471C32FEB</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

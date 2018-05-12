@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4338CF2E-D361-4C35-ED4F-EE138531A689" name="SKLAD">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:01 UTC</createdTime>
+<generatorID>81AB4547-4268-FBF5-DA17-7E01C2040A4A</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_DANIA" id="6C541CD0-690A-DC7B-5454-D248F8B3A365">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:01 UTC</createdTime>
+<generatorID>503406BD-FC57-CEFE-5347-9F0F05B4BC5B</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F7D5B085-9632-1A2E-E678-6C398E5A54D5" referredColumn="CD65E4A6-167C-05B9-B675-3B903C94ED8C"/>
+</associations>
+</Column>
+<Column name="ID_SKLADNIKA" id="33C2BF96-25B1-5CD6-5E4C-4B7AF58CCB9C">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:01 UTC</createdTime>
+<generatorID>6DC1E4B1-A8B2-F321-B2CB-8EE1139C4C14</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8731A385-016D-8A0A-7847-CAD922A0DCDF" referredColumn="2B2768C4-3C95-0CFA-A1AA-D62D839587E3"/>
+</associations>
+</Column>
+<Column name="ILOSC_SKLADNIKA_DANIA" id="A4C46555-9325-9329-1C02-62407992F6DE">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:01 UTC</createdTime>
+<generatorID>0D5AC892-09DC-0F09-E66D-59876956A4C8</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7D478D15-9B78-2D10-303D-3FDD169B86BA" name="SKLAD_PK">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:01 UTC</createdTime>
+<generatorID>7C94E910-20E3-7100-7199-2B4E14F61F75</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C541CD0-690A-DC7B-5454-D248F8B3A365"/>
+<colUsage columnID="33C2BF96-25B1-5CD6-5E4C-4B7AF58CCB9C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="24F62A72-5DC4-B52C-32DA-EC38E6535CEA" name="DANIE_FKv2">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:02 UTC</createdTime>
+<generatorID>377BEE45-ECFD-B686-A66D-B7CC638157B9</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C541CD0-690A-DC7B-5454-D248F8B3A365"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F1AA8F70-1D3D-C61E-7296-E51AFB5811F4" name="SKLADNIK_FK">
+<createdBy>karut</createdBy>
+<createdTime>2017-01-09 21:07:02 UTC</createdTime>
+<generatorID>0C73BC07-9CD3-5530-E06F-7BDF5FAC8D41</generatorID>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="33C2BF96-25B1-5CD6-5E4C-4B7AF58CCB9C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="DANIE FKv2" directorySegmentName="seg_0" id="377BEE45-ECFD-B686-A66D-B7CC638157B9">
+<createdBy>Kamil</createdBy>
+<createdTime>2017-01-04 20:38:27 UTC</createdTime>
+<ownerDesignName>model_logiczny_pizzeria</ownerDesignName>
+<engineerTo>
+<item key="C7AD30D5-6989-5934-8F65-A576A9E52A45" value="true"/>
+</engineerTo>
+<sourcePk>906D69B2-D832-9ACF-BAE1-07F889A94D74</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C35EB5E9-7FBC-25B0-1CFF-8623B023522B</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>81AB4547-4268-FBF5-DA17-7E01C2040A4A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
